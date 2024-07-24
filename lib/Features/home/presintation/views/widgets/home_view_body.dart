@@ -1,6 +1,6 @@
 import 'package:booklyapp/Features/home/presintation/views/widgets/customAppbar.dart';
-import 'package:booklyapp/Features/home/presintation/views/widgets/futureItembook.dart';
 import 'package:booklyapp/Features/home/presintation/views/widgets/futureListbooks.dart';
+import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -14,11 +14,22 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Customappbar(),
-        Futurelistbooks(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.only(left: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Customappbar(),
+          Futurelistbooks(),
+          SizedBox(
+            height: 50,
+          ),
+          Text(
+            'Best Seller',
+            style: Styles.textstyle24,
+          )
+        ],
+      ),
     );
   }
 }

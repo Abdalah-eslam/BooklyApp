@@ -1,6 +1,9 @@
+import 'package:booklyapp/Features/home/presintation/views/home_view.dart';
+import 'package:booklyapp/constant.dart';
 import 'package:booklyapp/core/utils/assetdata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class Splashviewbody extends StatefulWidget {
   const Splashviewbody({super.key});
@@ -18,6 +21,14 @@ class _SplashviewbodyState extends State<Splashviewbody>
   @override
   void initState() {
     super.initState();
+    inisSlidingAnimation();
+    Future.delayed(const Duration(seconds: 1), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: KprimaryDuration);
+    });
+  }
+
+  void inisSlidingAnimation() {
     animation =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidingAnimation =

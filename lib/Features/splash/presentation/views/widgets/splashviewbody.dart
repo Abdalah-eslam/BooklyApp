@@ -32,27 +32,28 @@ class _SplashviewbodyState extends State<Splashviewbody>
   }
 
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-        animation: slidingAnimation,
-        builder: (context, _) {
-          return SlideTransition(
-            position: slidingAnimation,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image.asset(Assetdata.logo),
-                const SizedBox(
-                  height: 6,
-                ),
-                const Text(
-                  'Read Free Books',
-                  textAlign: TextAlign.center,
-                )
-              ],
-            ),
-          );
-        });
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(Assetdata.logo),
+        const SizedBox(
+          height: 6,
+        ),
+        AnimatedBuilder(
+          animation: slidingAnimation,
+          builder: (context, _) {
+            return SlideTransition(
+              position: slidingAnimation,
+              child: const Text(
+                'Read Free Books',
+                textAlign: TextAlign.center,
+              ),
+            );
+          },
+        )
+      ],
+    );
   }
 
   void navigateToHome() {

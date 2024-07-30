@@ -28,7 +28,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       padding: EdgeInsets.only(top: 6.0),
                       child: Customappbar(),
                     ),
-                    const Futurelistbooks(),
+                    const Bookslistview(),
                     const SizedBox(
                       height: 50,
                     ),
@@ -40,7 +40,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],

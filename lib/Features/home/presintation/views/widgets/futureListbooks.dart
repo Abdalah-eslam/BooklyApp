@@ -1,8 +1,8 @@
 import 'package:booklyapp/Features/home/presintation/views/widgets/futureItembook.dart';
 import 'package:flutter/material.dart';
 
-class Futurelistbooks extends StatelessWidget {
-  const Futurelistbooks({super.key});
+class Bookslistview extends StatelessWidget {
+  const Bookslistview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class Futurelistbooks extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const Futureitembook();
+            return const Bookitem();
           }),
     );
   }

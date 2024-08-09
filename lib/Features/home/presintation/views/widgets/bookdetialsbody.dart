@@ -1,8 +1,11 @@
 import 'package:booklyapp/Features/home/presintation/views/widgets/appbar_book_details.dart';
 import 'package:booklyapp/Features/home/presintation/views/widgets/book_rating.dart';
 import 'package:booklyapp/Features/home/presintation/views/widgets/futureItembook.dart';
+import 'package:booklyapp/Features/home/presintation/views/widgets/futureListbooks.dart';
 import 'package:booklyapp/core/utils/styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'book_actions.dart';
 
 class Bookdetialsbody extends StatelessWidget {
@@ -24,10 +27,12 @@ class Bookdetialsbody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * .24),
-            child: const Bookitem(),
+            child: const Bookitem(
+              ImageUrl: "",
+            ),
           ),
           const SizedBox(
-            height: 24,
+            height: 14,
           ),
           Center(
             child: Text(
@@ -50,6 +55,7 @@ class Bookdetialsbody extends StatelessWidget {
             height: 8,
           ),
           const BookRating(
+            rating: 0,
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const SizedBox(
@@ -71,28 +77,14 @@ class Bookdetialsbody extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Bookslistview(),
+          SizedBox(
+              height: MediaQuery.of(context).size.height * .2,
+              child: const Bookslistview()),
           const SizedBox(
             height: 20,
           )
         ],
       ),
-    );
-  }
-}
-
-class Bookslistview extends StatelessWidget {
-  const Bookslistview({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.17,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const Bookitem();
-          }),
     );
   }
 }

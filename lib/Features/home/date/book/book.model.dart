@@ -5,7 +5,11 @@ class BookModel extends Equatable {
   final String? title;
   final String? image;
 
-  const BookModel({this.id, this.title, this.image});
+  const BookModel({
+    this.id,
+    this.title,
+    this.image,
+  });
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         id: json['id'] as int?,

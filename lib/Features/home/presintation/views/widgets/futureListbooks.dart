@@ -15,9 +15,13 @@ class Bookslistview extends StatelessWidget {
         builder: (context, state) {
           if (state is HomeCubitSucsses) {
             return ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Bookitem();
+                  return Bookitem(
+                    ImageUrl: state.books[index].image!,
+                  );
                 });
           }
           if (state is HomeCubitfailure) {

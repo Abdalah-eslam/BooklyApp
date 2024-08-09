@@ -3,7 +3,6 @@ import 'package:booklyapp/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../home/presintation/views/widgets/bestSeller_item.dart';
 import 'search_text_feild.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -46,7 +45,9 @@ class SearchResult extends StatelessWidget {
               onTap: () {
                 GoRouter.of(context).push(Approuter.kbookview);
               },
-              child: const BestSellerItem()),
+              child: const Text('data')
+              // const BestSellerItem(),
+              ),
         );
       },
     );

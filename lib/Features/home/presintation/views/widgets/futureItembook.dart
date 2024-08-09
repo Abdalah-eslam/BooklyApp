@@ -1,8 +1,9 @@
-import 'package:booklyapp/core/utils/assetdata.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Bookitem extends StatelessWidget {
-  const Bookitem({super.key});
+  const Bookitem({super.key, required this.ImageUrl});
+  final String ImageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +11,17 @@ class Bookitem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 8.0),
       child: AspectRatio(
         aspectRatio: 2.3 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Colors.amberAccent,
-              image: const DecorationImage(
-                  fit: BoxFit.fill, image: AssetImage(Assetdata.logo))),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: ImageUrl,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                Center(
+                    child: CircularProgressIndicator(
+                        value: downloadProgress.progress)),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
         ),
       ),
     );

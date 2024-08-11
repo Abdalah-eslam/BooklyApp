@@ -1,4 +1,4 @@
-import 'package:booklyapp/Features/home/manger/cubit/newest_books_cubit.dart';
+import 'package:booklyapp/Features/home/manger/home_cubit/newest_books_cubit.dart';
 import 'package:booklyapp/Features/home/presintation/views/widgets/bestSeller_item.dart';
 import 'package:booklyapp/core/utils/appRouters.dart';
 import 'package:booklyapp/core/utils/widgets/error_widget.dart';
@@ -22,7 +22,8 @@ class BestSellerList extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
                 child: GestureDetector(
                     onTap: () {
-                      GoRouter.of(context).push(Approuter.kbookview);
+                      GoRouter.of(context).push(Approuter.kbookview,
+                          extra: state.books[index].id);
                     },
                     child: BestSellerItem(
                       book: state.books[index],

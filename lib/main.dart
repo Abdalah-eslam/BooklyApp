@@ -1,6 +1,6 @@
 import 'package:booklyapp/Features/home/date/repo/home_repo_impl.dart';
-import 'package:booklyapp/Features/home/manger/cubit/home_cubit_cubit.dart';
-import 'package:booklyapp/Features/home/manger/cubit/newest_books_cubit.dart';
+import 'package:booklyapp/Features/home/manger/home_cubit/home_cubit_cubit.dart';
+import 'package:booklyapp/Features/home/manger/home_cubit/newest_books_cubit.dart';
 import 'package:booklyapp/SimpleBlocobserver.dart';
 import 'package:booklyapp/constant.dart';
 
@@ -21,7 +21,6 @@ void main() {
 class Bookly extends StatelessWidget {
   const Bookly({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

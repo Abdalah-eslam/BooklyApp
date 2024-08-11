@@ -1,5 +1,4 @@
 import 'package:booklyapp/Features/home/date/book/book.model.dart';
-import 'package:booklyapp/Features/home/presintation/views/widgets/book_rating.dart';
 
 import 'package:booklyapp/core/utils/styles.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -55,13 +54,8 @@ class BestSellerItem extends StatelessWidget {
                   Text(
                     "Free",
                     style: Styles.textstyle20
+                        .copyWith(color: Color(0xffFFDD4D))
                         .copyWith(fontWeight: FontWeight.w900),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 16.0),
-                    child: BookRating(
-                      rating: 0,
-                    ),
                   ),
                 ],
               )

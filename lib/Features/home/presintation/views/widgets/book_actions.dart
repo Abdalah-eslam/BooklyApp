@@ -15,7 +15,7 @@ class BookActions extends StatelessWidget {
       child: Row(
         children: [
           CustomButton(
-              text: r'19,99 $',
+              text: r'Free',
               color: Colors.white,
               style: Styles.textstyle24
                   .copyWith(color: Colors.black, fontWeight: FontWeight.bold),
